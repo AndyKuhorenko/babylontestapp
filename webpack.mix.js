@@ -15,20 +15,21 @@ mix.webpackConfig({
         new ESLintPlugin({
             fix: true,
         }),
-    ]
+    ],
 });
 
 mix.options({
     processCssUrls: false,
 });
 
-mix.js('src/js/app.js', 'js')
-    .vue()
+mix.ts('src/ts/app.ts', 'js')
     .sass('src/styles/app.scss', 'css')
     .sourceMaps()
     .copyDirectory('src/*.html', 'dist')
     .copyDirectory('src/fonts', 'dist/fonts')
     .copyDirectory('src/img', 'dist/img')
+    .copyDirectory('src/scenes', 'dist/scenes')
+    .copyDirectory('src/textures', 'dist/textures')
     .setPublicPath('dist');
 
 mix.browserSync({

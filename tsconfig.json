@@ -4,6 +4,10 @@
     "target": "es6",
     "sourceMap": true
   },
+  "types": [
+    "babylonjs",
+    "babylonjs-gui"
+  ],
   "exclude": [
     "node_modules"
   ],
