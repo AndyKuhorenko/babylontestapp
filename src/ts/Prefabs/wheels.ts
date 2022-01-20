@@ -25,7 +25,7 @@ const addWheels = (scene: Scene, car: Mesh) => {
   wheelRB.position.y = 0.035;
 
   const animWheel = new Animation('wheelAnimation', 'rotation.y', 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
-  const wheelKeys = [];
+  const wheelKeys: { frame: number, value: number }[] = [];
 
   wheelKeys.push({
     frame: 0,

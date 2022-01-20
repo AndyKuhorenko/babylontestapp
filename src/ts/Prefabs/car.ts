@@ -10,6 +10,7 @@ import {
   Vector4,
 } from '@babylonjs/core';
 import earcut from 'earcut';
+import addWheels from './wheels';
 
 const createCarBody = (scene: Scene): Mesh => {
   const outline = [
@@ -46,7 +47,7 @@ const createCarBody = (scene: Scene): Mesh => {
 
   const animCar = new Animation('carAnimation', 'position.z', 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
 
-  const carKeys = [];
+  const carKeys: { frame: number, value: number }[] = [];
 
   carKeys.push({
     frame: 0,
@@ -73,4 +74,8 @@ const createCarBody = (scene: Scene): Mesh => {
   return car;
 };
 
-export default createCarBody;
+const createCar = (scene: Scene) => {
+  addWheels(scene, createCarBody(scene));
+};
+
+export default createCar;

@@ -28,8 +28,6 @@ mix.ts('src/ts/app.ts', 'js')
     .copyDirectory('src/*.html', 'dist')
     .copyDirectory('src/fonts', 'dist/fonts')
     .copyDirectory('src/img', 'dist/img')
-    .copyDirectory('src/scenes', 'dist/scenes')
-    .copyDirectory('src/textures', 'dist/textures')
     .setPublicPath('dist');
 
 mix.browserSync({

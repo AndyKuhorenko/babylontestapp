@@ -18,7 +18,7 @@ function createDwellings(scene: Scene) {
   semiHouse.position.x = -4.5;
   semiHouse.position.z = 3;
 
-  const places = [];
+  const places: number[][] = [];
   places.push([1, -Math.PI / 16, -6.8, 2.5]);
   places.push([2, -Math.PI / 16, -4.5, 3]);
   places.push([2, -Math.PI / 16, -1.5, 4]);

@@ -7,39 +7,14 @@ import {
 } from '@babylonjs/core';
 import * as GUI from 'babylonjs-gui';
 
-import createFountain from './fountain';
-import createSkybox from './skybox';
-import createDwellings from './dwellings';
-import createLamp from './lamp';
-import createTrees from './trees';
-import createCarBody from './car';
-import addWheels from './wheels';
-import createDude from './dude';
+import createFountain from './Prefabs/fountain';
+import createSkybox from './Prefabs/skybox';
+import createDwellings from './Prefabs/dwellings';
+import createLamps from './Prefabs/lamp';
+import createTrees from './Prefabs/trees';
+import createDude from './Prefabs/dude';
+import createCar from './Prefabs/car';
 import createCamera from './camera';
-
-const createLamps = (scene: Scene) => {
-  const lamp = createLamp(scene);
-  lamp.position = new Vector3(2, 0, 2);
-  lamp.rotation = Vector3.Zero();
-  lamp.rotation.y = -Math.PI / 4;
-
-  const lamp3 = lamp.clone('lamp3');
-  lamp3.position.z = -8;
-
-  const lamp1 = lamp.clone('lamp1');
-  lamp1.position.x = -8;
-  lamp1.position.z = 1.2;
-  lamp1.rotation.y = Math.PI / 2;
-
-  const lamp2 = lamp1.clone('lamp2');
-  lamp2.position.x = -2.7;
-  lamp2.position.z = 0.8;
-  lamp2.rotation.y = -Math.PI / 2;
-};
-
-const createCar = (scene: Scene) => {
-  addWheels(scene, createCarBody(scene));
-};
 
 function createScene(canvas: HTMLCanvasElement) {
   const engine = new Engine(canvas);

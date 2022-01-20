@@ -28,7 +28,7 @@ const createFountain = (scene: Scene): Mesh => {
   fountain.position = new Vector3(1.5, 0, 1);
 
   const particleSystem = new ParticleSystem('particles', 5000, scene);
-  particleSystem.particleTexture = new Texture('textures/flare.png', scene);
+  particleSystem.particleTexture = new Texture('../../img/textures/flare.png', scene);
 
   particleSystem.emitter = new Vector3(1.5, 0.75, 1);
   particleSystem.minEmitBox = new Vector3(-0.01, 0, -0.01);

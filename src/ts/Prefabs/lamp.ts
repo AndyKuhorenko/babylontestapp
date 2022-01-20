@@ -16,7 +16,7 @@ const createLamp = (scene: Scene) => {
 
   lampShape.push(lampShape[0]);
 
-  const lampPath = [];
+  const lampPath: Vector3[] = [];
   lampPath.push(new Vector3(0, 0, 0));
   lampPath.push(new Vector3(0, 10, 0));
   for (let i = 0; i < 20; i += 1) {
@@ -46,4 +46,24 @@ const createLamp = (scene: Scene) => {
   return lamp;
 };
 
-export default createLamp;
+const createLamps = (scene: Scene) => {
+  const lamp = createLamp(scene);
+  lamp.position = new Vector3(2, 0, 2);
+  lamp.rotation = Vector3.Zero();
+  lamp.rotation.y = -Math.PI / 4;
+
+  const lamp3 = lamp.clone('lamp3');
+  lamp3.position.z = -8;
+
+  const lamp1 = lamp.clone('lamp1');
+  lamp1.position.x = -8;
+  lamp1.position.z = 1.2;
+  lamp1.rotation.y = Math.PI / 2;
+
+  const lamp2 = lamp1.clone('lamp2');
+  lamp2.position.x = -2.7;
+  lamp2.position.z = 0.8;
+  lamp2.rotation.y = -Math.PI / 2;
+};
+
+export default createLamps;

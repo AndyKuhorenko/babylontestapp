@@ -5,7 +5,7 @@ import {
 } from '@babylonjs/core';
 
 const createTrees = (scene: Scene) => {
-  const spriteManagerTrees = new SpriteManager('treesManager', '../textures/palmtree.png', 2000, { width: 512, height: 1024 }, scene);
+  const spriteManagerTrees = new SpriteManager('treesManager', '../../img/textures/palmtree.png', 2000, { width: 512, height: 1024 }, scene);
 
   for (let i = 0; i < 500; i += 1) {
     const tree = new Sprite('tree', spriteManagerTrees);
@@ -21,7 +21,7 @@ const createTrees = (scene: Scene) => {
     tree.position.y = 0.5;
   }
 
-  const spriteManagerUfo = new SpriteManager('ufoManager', '../textures/ufo.png', 1, { width: 128, height: 76 }, scene);
+  const spriteManagerUfo = new SpriteManager('ufoManager', '../../img/textures/ufo.png', 1, { width: 128, height: 76 }, scene);
   const ufo = new Sprite('ufo', spriteManagerUfo);
   ufo.playAnimation(0, 16, true, 125);
   ufo.position.y = 5;
